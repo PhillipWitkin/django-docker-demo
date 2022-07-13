@@ -1,0 +1,57 @@
+[
+    {
+        "model": "articles.author",
+        "pk": 1,
+        "fields": {
+          "full_name": "Hunter S Thompson"
+        }
+    },
+
+    {
+        "model": "articles.author",
+        "pk": 2,
+        "fields": {
+          "full_name": "John McMasters"
+        }
+    },
+
+    {
+        "model": "articles.article",
+        "pk": 1,
+        "fields": {
+            "title": "3 Puppies Are Born",
+            "body_text": "Lorem Ipsum 1 and a bunch of random letters.",
+            "author": 1
+        }
+    },
+
+     {
+        "model": "articles.article",
+        "pk": 2,
+        "fields": {
+            "title": "Dog Bites 42 Humans",
+            "body_text": "Lorem Ipsum 2. What a well constructed sentence which really is very long.",
+            "author": 1
+        }
+    },
+
+    {
+        "model": "articles.article",
+        "pk": 3,
+        "fields": {
+            "title": "All Humans Can Now Fly",
+            "body_text": "For ages man has dreamed of flight. And then it happened, for no reason.",
+            "author": 2
+        }
+    },
+
+     {
+        "model": "articles.article",
+        "pk": 4,
+        "fields": {
+            "title": "Seeding Databases",
+            "body_text": "Writing mock data is not actually as bad as some people say.",
+            "author": 2
+        }
+    }
+]

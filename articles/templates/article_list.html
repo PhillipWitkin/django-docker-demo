@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Newsfeed Home</title>
+</head>
+<body>
+    {% block content %}
+        <h2>Articles:</h2>
+{#        <ul>#}
+        <div>
+            {% for article in article_list %}
+                <h3>{{ article.title }}</h3>
+                <h4>Written By {{ article.author.full_name }}</h4>
+                <br>
+            {% endfor %}
+        </div>
+
+{#        </ul>#}
+    {% endblock %}
+</body>
+</html>

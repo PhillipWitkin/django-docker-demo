@@ -7,8 +7,9 @@ class Author(models.Model):
         verbose_name="author full name",
         max_length=100
     )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # Leaving these out for now
+    # created_at = models.DateTimeField(auto_now_add=True)
+    # updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.full_name
@@ -27,8 +28,9 @@ class Article(models.Model):
     # we know a picture will be used in the future, so for now we are just assuming a many-to-many relationship,
     # since we know an Article can have more than one Pictures, but a Picture could also be featured in many Articles
     pictures = models.ManyToManyField(Picture, related_name='articles')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    # Leaving these out for now
+    # created_at = models.DateTimeField(auto_now_add=True)
+    # updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
