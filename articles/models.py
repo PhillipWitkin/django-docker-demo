@@ -7,6 +7,8 @@ class Author(models.Model):
         verbose_name="author full name",
         max_length=100
     )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.full_name
@@ -17,14 +19,16 @@ class Picture(models.Model):
     pass
 
 
-# define article model
+# define article model with many-to-one relationship with Author
 class Article(models.Model):
     title = models.CharField(max_length=300)
-    story = models.TextField()
-    last_edited = models.DateTimeField('last changed')
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='author')
-    # we know a picture will be used in the future, so for now we are just allowing its FK reference to be null
-    picture = models.ForeignKey(Picture, on_delete=models.CASCADE, related_name='Picture', null=True)
+    body_text = models.TextField()
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='articles')
+    # we know a picture will be used in the future, so for now we are just assuming a many-to-many relationship,
+    # since we know an Article can have more than one Pictures, but a Picture could also be featured in many Articles
+    pictures = models.ManyToManyField(Picture, related_name='articles')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
