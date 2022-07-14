@@ -1,9 +1,14 @@
 # Instructions for local setup:
 
-### Clone Repository from Github and switch to the 'dockerized' branch
+### Clone Repository from Github 
   * Navigate to a directory not part of a git repository
   * clone the project by executing the following command:
     * `git clone https://github.com/PhillipWitkin/newsfeed`
+
+### Switch to the 'dockerized' branch of the repository
+  * Navigate to the project root directory
+    * `cd checkout newsfeed`
+  * Checkout into the 'dockerized' branch 
     * `git checkout dockerized`
 
 ### Build the Docker Containers
