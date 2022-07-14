@@ -8,8 +8,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         print("Seeding Database...")
-        print("Clearing previous entries...")
-        Author.objects.all().delete()
-        Article.objects.all().delete()
-        print("Loading from seed_data.json...")
-        management.call_command('loaddata', 'seed_data.json')
+        querySetArticles = Article.objects.all()
+        querySetAuthors = Author.objects.all()
+        if querySetAuthors.exists() and querySetArticles.exists():
+            print("Loading from seed_data.json...")
+            management.call_command('loaddata', 'seed_data.json')
+        else:
+            print("Database has already been seeded")
