@@ -4,7 +4,7 @@
 - The current database schema includes a table for Pictures with a many-to-many relationship with Articles
 - The current model does not configure this table, so in order to support displaying at least one image,
 the table fields must be specified by the Picture model, migration to revise the database schema, adding any new fields 
-to the creation form, and add some logic to the ArticleCreateView
+to the creation form, and add some logic to the ArticleCreateView which saves picture data (probably utilizing a URL), as a new Picture (if it does not already exist in the database), along with its relationship to one or more Articles 
 
 ### Able to accommodate 1M+ requests per day for a viral story
 - The application is currently running with the development server that comes with Django, and it would not be suitable for Production particularly with such a large spike in requests.
