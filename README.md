@@ -7,7 +7,7 @@
 
 ### Switch to the 'dockerized' branch of the repository
   * Navigate to the project root directory
-    * `cd checkout newsfeed`
+    * `cd newsfeed`
   * Checkout into the 'dockerized' branch 
     * `git checkout dockerized`
 
