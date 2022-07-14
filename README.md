@@ -12,13 +12,11 @@
     * `git checkout dockerized`
 
 ### Build the Docker Containers
-  * Navigate to the project root directory:
-    * `cd newsfeed`
   * Tell Docker to build the containers
     * `docker build .`
 
 ### Start the Project Environment
-  * User docker-compose to start the services, perform migrations, and seed the database if it is empty: 
+  * User docker-compose to automatically start the services, perform migrations, and seed the database if it is empty: 
   * `docker-compose up`
 
 
