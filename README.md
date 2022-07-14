@@ -4,11 +4,14 @@
   * Navigate to a directory not part of a git repository
   * clone the project by executing the following command:
     * `git clone https://github.com/PhillipWitkin/newsfeed`
+
+### Switch to the 'dockerized' branch of the repository
+  * Navigate to the project root directory
+    * `cd newsfeed`
+  * Checkout into the 'dockerized' branch 
     * `git checkout dockerized`
 
 ### Build the Docker Containers
-  * Navigate to the project root directory:
-    * `cd newsfeed`
   * Tell Docker to build the containers
     * `docker build .`
 
