@@ -17,7 +17,7 @@
 
 ### Start the Project Environment
   * User docker-compose to start the services, perform migrations, and seed the database if it is empty: 
-  * `docker-compose up`
+    * `docker-compose up`
 
 
 ### Restarting 
