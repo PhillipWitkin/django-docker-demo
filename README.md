@@ -22,6 +22,6 @@
 
 ### Restarting 
   * If the Docker containers are stopped (`docker-compose down`), they can be restarted again with `docker-compose up`
-  * If you wish to re-create the state of the seeded database, run the following two commands while the services are running:
+  * If you wish to re-create the state of the seeded database, execute the following two commands while the services are running:
     * `docker-compose exec web python manage.py clear_db`
     * `docker-compose exec web python manage.py seed_db`
