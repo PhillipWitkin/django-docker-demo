@@ -6,8 +6,11 @@
 </head>
 <body>
     {% block content %}
-        <h2>Articles:</h2>
-{#        <ul>#}
+        <h1>Articles:</h1>
+        <form action="{% url 'create-article' %}">
+            <input type="submit" value="Create New Article"/>
+        </form>
+
         <div>
             {% for article in article_list %}
                 <h3><a href = "{% url 'article-detail' article.id %}">{{ article.title }}</a></h3>
