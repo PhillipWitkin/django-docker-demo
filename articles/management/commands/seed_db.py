@@ -10,7 +10,7 @@ class Command(BaseCommand):
         print("Seeding Database...")
         querySetArticles = Article.objects.all()
         querySetAuthors = Author.objects.all()
-        if querySetAuthors.exists() and querySetArticles.exists():
+        if querySetAuthors.count() == 0 and querySetArticles.count() == 0:
             print("Loading from seed_data.json...")
             management.call_command('loaddata', 'seed_data.json')
         else:
