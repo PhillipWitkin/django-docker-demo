@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 from .models import *
-
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+from .forms import *
 
 
 class ArticleListView(ListView):
@@ -15,10 +14,10 @@ class ArticleListView(ListView):
     context_object_name = "article_list"
     template_name = "article_list.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # context['now'] = timezone.now()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     # context['now'] = timezone.now()
+    #     return context
 
 
 class ArticleDetailView(DetailView):
@@ -27,3 +26,25 @@ class ArticleDetailView(DetailView):
     template_name = "article_detail.html"
 
 
+class ArticleCreateView(CreateView):
+    model = Article
+    form_class = ArticleForm
+    template_name = "article_create_form.html"
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            author_name = form.cleaned_data['author']
+            # if the author name is new, create a new Author, otherwise use the existing DB entry
+            author, created = Author.objects.get_or_create(full_name=author_name)
+            # Create Article Object
+            article = Article(
+                title=form.cleaned_data['title'],
+                body_text=form.cleaned_data['body_text'],
+                # author_id=a
+            )
+            article.author = author
+            article.save()
+            return HttpResponseRedirect('/')
+        else:
+            return render(request, self.template_name, {'form': form})

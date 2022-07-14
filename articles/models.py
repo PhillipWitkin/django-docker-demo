@@ -5,7 +5,8 @@ from django.db import models
 class Author(models.Model):
     full_name = models.CharField(
         verbose_name="author full name",
-        max_length=100
+        max_length=100,
+        unique=True,
     )
     # Leaving these out for now
     # created_at = models.DateTimeField(auto_now_add=True)

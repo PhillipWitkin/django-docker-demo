@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a New Article</title>
+    {% load static %}
+    <script src="{% static '/js/script.js' %}" type="text/javascript"></script>
+</head>
+<body>
+    <h1>Enter Article Information</h1>
+    <form action="" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit"/>
+    </form>
+    <br>
+    <div>
+        <button id="refresh">Clear</button>
+    </div>
+
+</body>
+</html>
