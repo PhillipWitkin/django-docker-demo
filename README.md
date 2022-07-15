@@ -25,3 +25,6 @@
   * If you wish to re-create the state of the seeded database, execute the following two commands while the services are running:
     * `docker-compose exec web python manage.py clear_db`
     * `docker-compose exec web python manage.py seed_db`
+
+### Access the URL from the local server
+  * Docker will serve the site locally at http:\\0.0.0.0:8000\ 
