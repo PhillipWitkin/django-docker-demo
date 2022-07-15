@@ -20,7 +20,7 @@
     * `docker-compose up`
 
 ### Access the URL from the local server
-  * Docker will serve the site locally at http:\\0.0.0.0:8000\ 
+  * Docker will serve the site locally at http://0.0.0.0:8000/ 
   
 ### Restarting 
   * If the Docker containers are stopped (`docker-compose down`), they can be restarted again with `docker-compose up`
