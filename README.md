@@ -19,6 +19,8 @@
   * User docker-compose to start the services, perform migrations, and seed the database if it is empty: 
     * `docker-compose up`
 
+### Access the URL from the local server
+  * Docker will serve the site locally at http:\\0.0.0.0:8000\ 
 
 ### Restarting 
   * If the Docker containers are stopped (`docker-compose down`), they can be restarted again with `docker-compose up`
@@ -26,5 +28,3 @@
     * `docker-compose exec web python manage.py clear_db`
     * `docker-compose exec web python manage.py seed_db`
 
-### Access the URL from the local server
-  * Docker will serve the site locally at http:\\0.0.0.0:8000\ 
